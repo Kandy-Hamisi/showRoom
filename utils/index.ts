@@ -8,7 +8,7 @@ export async function fetchCars(filters: FilterProps) {
 
     const { manufacturer, year, model, fuel, limit } = filters;
 
-    const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`, {
+    const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&fuel_type=${fuel}`, {
         headers: headers,
     });
 
@@ -40,7 +40,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
     const url = new URL('https://cdn.imagin.studio/getimage');
 
     const { make, year, model } = car;
-    url.searchParams.append('customer', 'hrjavascript-mastery');
+    url.searchParams.append('customer', 'img');
     url.searchParams.append('make', make);
     url.searchParams.append('modelFamily', model.split(' ')[0]);
     url.searchParams.append('ZoomType', 'fullscreen');

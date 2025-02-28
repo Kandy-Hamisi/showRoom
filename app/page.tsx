@@ -75,7 +75,7 @@ export default function Home() {
               <div className="home__cars-wrapper">
                 {
                   allCars?.map(car => (
-                    <CarCard car={car} />
+                    <CarCard key={car.id} car={car} />
                   ))
                 }
               </div>
